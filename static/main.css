@@ -187,6 +187,7 @@ body{
 }
 
 .navebarside{
+    border-radius: 0px 5px 5px 0px;
 	border:2px solid #1a1a1a;
     text-align:left;
     height:100%;
@@ -196,6 +197,7 @@ body{
     top:0px;
     left: 0px;
     transition: all .2s;
+    
 }
 @media (max-width: 1000px) {
   .navebarside {
@@ -621,6 +623,13 @@ body{
     transform: translate(-50%, -50%);
 }
 
+@media (max-width: 1200px){
+    .time{
+        font-size:100px;
+    }
+}
+
+
 .time2{
     height:260px;
     width:1100px;
@@ -637,6 +646,27 @@ body{
     position: absolute;
     right: 0px;
     bottom:0px;
+}
+@media (max-width: 1200px){
+    .time2{
+        width:700px;
+    }
+    .date{
+        right:100px;
+    }
+}
+@media (max-width: 500px){
+    .time{
+        font-size:50px;
+    }
+    .date{
+        right:0px;
+        font-size:20px;
+    }
+    .time2{
+        height:100px;
+        width:400px;
+    }
 }
 
 .calc{
@@ -835,6 +865,8 @@ body{
 }
 
 .version{
+    background:#292929;
+    border:2px  solid #1a1a1a;
     padding:0px 5px;
 	height:25px;
 	line-height:25px;
@@ -842,7 +874,6 @@ body{
 	position:fixed;
 	bottom:0px;
 	left:0px;
-c
 	border-radius: 0px 5px 0px 0px;
 }
 .start{
@@ -881,7 +912,7 @@ c
 .shell{
     padding:5px;
     font-size:15;
-    width:100%;
+    width:90%;
     position:fixed;
     bottom:0%;
     left:0%;
@@ -897,4 +928,12 @@ c
 }
 .shell:focus{
     outline:none;
+}
+
+#shell{
+    position:absolute;
+    top:100px;
+    left:10px;
+    width:100%;
+    text-align:left;
 }
