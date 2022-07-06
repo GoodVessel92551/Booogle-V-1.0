@@ -5,17 +5,19 @@ from replit import web, db
 
 app = Flask(__name__)
 users = web.UserStore()
-version = "0.4.5"
+version = "1.0"
 
 @app.route("/")
 def index():
     vists = db["vists"]
-    db["vists"] = vists + 1
     name = web.auth.name
+    if name != "GoodVessel92551":
+        db["vists"] = vists + 1
     if name != "":
         return redirect("/home")
     else:
         return render_template("index.html")
+    
 
 
 @app.route("/home")
@@ -89,11 +91,7 @@ def feedback():
     bug = len(bug) / 3
     feed = len(feed) / 3
     if name == "GoodVessel92551":
-        return render_template("suggestions.html",
-                               name=name,
-                               users=users,
-                               bug=bug,
-                               feed=feed)
+        return render_template("suggestions.html",name=name, users=users,bug=bug,feed=feed)
     else:
         return render_template("no.html")
 
