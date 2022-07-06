@@ -1,13 +1,18 @@
-Welcome to Booogle V1.0
+**Change Log**
 
-In this release I add:
+Version 1.0
 
-The maths app
-The time app wich has the time and stopwatch and timer
-The tasks app
-The random number generater app
+What is new in v1.0:
 
-There will be more apps coming soon but if you have a suggestion please upload it though the website
+The time apps which includes a stopwatch, timer and the current time
+
+The calculator app so you can do maths on Booogle
+
+The task app so you can now set you self tasks
+
+The random number generator app
+
+Thank you for all the people that are using Booogle.
 
 Link:https://booogle-two.goodvessel92551.repl.co/
 
