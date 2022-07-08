@@ -5,17 +5,18 @@ from replit import web, db
 
 app = Flask(__name__)
 users = web.UserStore()
-version = "1.0"
+version = "1.0.1"
 
 @app.route("/")
 def index():
     vists = db["vists"]
     name = web.auth.name
-    if name != "GoodVessel92551":
-        db["vists"] = vists + 1
     if name != "":
+        if name != "GoodVessel92551":
+            db["vists"] = vists + 1
         return redirect("/home")
     else:
+        db["vists"] = vists + 1
         return render_template("index.html")
     
 
@@ -42,6 +43,7 @@ def admin():
     views = db["vists"]
     users2 = db["names2"]
     views2 = db["vists2"]
+    print(users)
     users = len(users)
     if name == "GoodVessel92551":
         db["names2"] = users
@@ -353,7 +355,12 @@ def stopwatch():
 def time_home():
     name = web.auth.name
     return render_template("time_home.html", name=name, version=version)
-
+    
+@app.route("/changelog")
+@web.authenticated
+def changelog():
+    name = web.auth.name
+    return render_template("change.html", name=name, version=version)
 
 @app.route("/shell")
 @web.authenticated
